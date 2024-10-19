@@ -1,0 +1,15 @@
+delay(0.275, function()
+local sfx = Instance.new("Part",workspace) 
+sfx.Anchored = true 
+sfx.Size = Vector3.new(0.36,10,0.4) 
+sfx.BrickColor = BrickColor.new("White") 
+sfx.CFrame = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(0,-9.5,-2.65)
+sfx.CanCollide = false
+local no = Instance.new("SpecialMesh",sfx)
+no.MeshId = "rbxassetid://465130937"
+no.Scale = Vector3.new(0.025,0.065,0.025)
+for i=1,10,1 do task.wait(.01) sfx.CFrame *= CFrame.new(0,1,0) end
+task.wait(.03)
+for i=1,35,1 do task.wait(.01) sfx.CFrame *= CFrame.new(0,-2.1,0) end
+sfx:Destroy()
+end)
